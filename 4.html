@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Equação de Segundo Grau</title>
+</head>
+<body>
+    <h2>Calculadora de Equação de Segundo Grau</h2>
+    <form>
+        Coeficiente a: <input type="number" id="coefA" step="0.01"><br><br>
+        Coeficiente b: <input type="number" id="coefB" step="0.01"><br><br>
+        Coeficiente c: <input type="number" id="coefC" step="0.01"><br><br>
+        <button type="button" onclick="calcularBhaskara()">Calcular Raízes</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularBhaskara() {
+            let a = parseFloat(document.getElementById("coefA").value);
+            let b = parseFloat(document.getElementById("coefB").value);
+            let c = parseFloat(document.getElementById("coefC").value);
+
+            let delta = Math.pow(b, 2) - 4 * a * c;
+
+            if (delta < 0) {
+                document.getElementById("resultado").innerHTML = "As raízes são complexas (não reais).";
+            } else {
+                let raiz1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let raiz2 = (-b - Math.sqrt(delta)) / (2 * a);
+                document.getElementById("resultado").innerHTML = "As raízes são: " + raiz1.toFixed(2) + " e " + raiz2.toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>

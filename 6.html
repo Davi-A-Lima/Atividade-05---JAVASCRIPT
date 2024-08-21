@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificador de Anagramas</title>
+</head>
+<body>
+    <h2>Verificador de Anagramas</h2>
+    <form>
+        Palavra 1: <input type="text" id="palavra1"><br><br>
+        Palavra 2: <input type="text" id="palavra2"><br><br>
+        <button type="button" onclick="verificarAnagrama()">Verificar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarAnagrama() {
+            let palavra1 = document.getElementById("palavra1").value.split('').sort().join('');
+            let palavra2 = document.getElementById("palavra2").value.split('').sort().join('');
+
+            if (palavra1 === palavra2) {
+                document.getElementById("resultado").innerHTML = "São anagramas.";
+            } else {
+                document.getElementById("resultado").innerHTML = "Não são anagramas.";
+            }
+        }
+    </script>
+</body>
+</html>

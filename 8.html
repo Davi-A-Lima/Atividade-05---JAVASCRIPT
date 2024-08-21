@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exibir Sobrenome Primeiro</title>
+</head>
+<body>
+    <h2>Exibir Sobrenome Primeiro</h2>
+    <form>
+        Nome completo: <input type="text" id="nomeCompleto"><br><br>
+        <button type="button" onclick="exibirSobrenome()">Exibir Sobrenome Primeiro</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function exibirSobrenome() {
+            let nomeCompleto = document.getElementById("nomeCompleto").value.trim();
+            let partesNome = nomeCompleto.split(' ');
+            let sobrenome = partesNome.pop();  // Remove o último nome (sobrenome)
+            let primeiroNome = partesNome.join(' ');  // Junta o restante do nome
+            document.getElementById("resultado").innerHTML = `${sobrenome}, ${primeiroNome}`;
+        }
+    </script>
+</body>
+</html>

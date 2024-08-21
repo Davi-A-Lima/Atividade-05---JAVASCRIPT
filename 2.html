@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Volume da Esfera</title>
+</head>
+<body>
+    <h2>Calculadora de Volume da Esfera</h2>
+    <form>
+        Raio (m): <input type="number" id="raio" step="0.01"><br><br>
+        <button type="button" onclick="calcularVolume()">Calcular Volume</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularVolume() {
+            let raio = parseFloat(document.getElementById("raio").value);
+            let volume = (4/3) * Math.PI * Math.pow(raio, 3);
+            document.getElementById("resultado").innerHTML = "O volume da esfera é: " + volume.toFixed(2) + " metros cúbicos";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Triângulo</title>
+</head>
+<body>
+    <h2>Calculadora de Perímetro e Área de um Triângulo</h2>
+    <form>
+        Lado a: <input type="number" id="ladoA" step="0.01"><br><br>
+        Lado b: <input type="number" id="ladoB" step="0.01"><br><br>
+        Lado c: <input type="number" id="ladoC" step="0.01"><br><br>
+        Altura relativa ao lado b: <input type="number" id="altura" step="0.01"><br><br>
+        <button type="button" onclick="calcularTriangulo()">Calcular Perímetro e Área</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularTriangulo() {
+            let a = parseFloat(document.getElementById("ladoA").value);
+            let b = parseFloat(document.getElementById("ladoB").value);
+            let c = parseFloat(document.getElementById("ladoC").value);
+            let h = parseFloat(document.getElementById("altura").value);
+
+            let perimetro = a + b + c;
+            let area = (b * h) / 2;
+
+            document.getElementById("resultado").innerHTML = "Perímetro: " + perimetro.toFixed(2) + " unidades<br>Área: " + area.toFixed(2) + " unidades²";
+        }
+    </script>
+</body>
+</html>

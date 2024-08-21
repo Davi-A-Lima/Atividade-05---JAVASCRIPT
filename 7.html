@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador de Espaços em Branco</title>
+</head>
+<body>
+    <h2>Contador de Espaços em Branco</h2>
+    <form>
+        Frase: <input type="text" id="frase"><br><br>
+        <button type="button" onclick="contarEspacos()">Contar Espaços</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function contarEspacos() {
+            let frase = document.getElementById("frase").value;
+            let espacos = frase.split(' ').length - 1;
+            document.getElementById("resultado").innerHTML = "A quantidade de espaços em branco é: " + espacos;
+        }
+    </script>
+</body>
+</html>
